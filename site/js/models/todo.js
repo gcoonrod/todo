@@ -10,5 +10,10 @@ app.Todo = Backbone.Model.extend({
         this.save({
             completed: !this.get('completed')
         });
+    },
+
+    parse: function(response){
+        response.id = response._id;
+        return response;
     }
 });
